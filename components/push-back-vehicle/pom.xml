@@ -8,5 +8,24 @@
     <artifactId>push-back-vehicle</artifactId>
     <version>1.0.0</version>
 
-    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <finalName>pushbackvehicle</finalName>
+                    <outputDirectory>../../main-application/components</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>de.dhbw.mosbach.ai.se</groupId>
+            <artifactId>main-application</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 </project>

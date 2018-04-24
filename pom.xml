@@ -7,10 +7,54 @@
     <groupId>de.dhbw.mosbach.ai.se</groupId>
     <artifactId>airport</artifactId>
     <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.6-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>23.6-jre</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <packaging>pom</packaging>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <modules>
-        <module>main-application</module>
+
         <module>components/check-in-desk</module>
         <module>components/bulky-baggage-desk</module>
         <module>components/scanner</module>
@@ -21,6 +65,7 @@
         <module>components/service-vehicle-oil</module>
         <module>components/service-vehicle-fresh-water</module>
         <module>components/service-vehicle-waste-water-tank</module>
+        <module>components/service-vehicle-nitrogen-oxygen</module>
         <module>components/air-cargo-pallet-lifter</module>
         <module>components/baggage-vehicle</module>
         <module>components/container-lifter</module>
@@ -29,5 +74,8 @@
         <module>components/boarding-control</module>
         <module>components/push-back-vehicle</module>
         <module>components/ground-operations-center</module>
+        <module>components/persistence</module>
+        <module>components/base</module>
+        <module>main-application</module>
     </modules>
 </project>
